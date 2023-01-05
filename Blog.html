@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>We chat-The social media website for chatting, bloging,exploring and much more.</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/x-icon" href="Png/logo.png">
+</head>
+<body>
+
+	<!-- Navigation bar form top  -->
+	<header class="dark-div-2">
+    <img onclick="mainSection()" class="logo-image" src="Png/logo.png"></img>
+		<!-- search bar from starts -->
+    <!-- <img src="Png/search-icon.png" id="search-image" alt=""> -->
+
+	<!-- search bar ends -->
+
+	<!-- nav list starts -->
+	    <nav class="navMenu dark" id="nav-fetch">
+      <a href="#" onmouseover="demoboxOn()" onmouseout="demoboxOff()" id="demo">Demo</a>
+      <a href="#" onmouseover="pagesboxOn()" onmouseout="pagesboxOff()" id="pages">Pages</a>
+      <a href="#" onmouseover="accountboxOn()" onmouseout="accountboxOff()" id="account">Account</a>
+      <a href="#" >Help</a>
+    </nav>
+      <!-- nav list ends -->
+      <!-- some divs like messege,setting,profile....starts -->
+      <div class="box-nav-items">
+      
+
+      <div class="box-nav-box dark-div" id="box-message" onclick="chatbox()" >
+        <img src="Png/message-icon.png" class="day" height="60%" width="55%">
+        <img src="Png/message-icon2.png" class="night" height="60%" width="55%">
+      </div>
+
+      <div class="box-nav-box dark-div" id="box-setting" onclick="darkmodeToggle()">
+        <img src="Png/setting-icon.png" class="day" height="60%" width="55%">
+        <img src="Png/settings-icon.png" class="night" height="60%" width="55%">
+      </div>
+      
+      <div class="box-nav-box dark-div" id="box-bell" onclick="notifOn()">
+        <img src="Png/bell-icon.png" class="day" height="60%" width="55%">
+        <img src="Png/notification-icon.png" class="night" height="60%" width="55%">
+      </div>
+      
+      <div id="box-DP"><!--profile picture or the DP will be here--></div>
+      </div>
+      <!-- some divs like messege,setting,profile....ends -->
+
+
+      <!-- Demo div js starts -->
+      	<div id="demo-box" class="dark-div-2"onmousemove="demoboxOn()">
+          <ul id="demo-list"onmouseout="demoboxOff()">
+            <a href="#"><li>Home default</li></a>
+           <a href="#post-2-fetch"><li>Bootstrap Post</li></a>
+            <li>Home social</li>
+            <li>Home post</li>
+            <li>Home video</li>
+            <li>Home event</li>
+           <a href="#page-last"><li>Landing page</li><br><hr></a>
+            <li>App download</li>
+          </ul>
+        </div>
+      <!-- Demo div js ends -->
+      
+      
+      <!-- pages div js starts -->
+      <div id="pages-box" class="dark-div-2" onmousemove="pagesboxOn()">
+        <ul id="demo-list"onmouseout="pagesboxOff()">
+          <li>Albums</li>
+          <li>Celebrations</li>
+          <li>Messaging</li>
+          <li>Events</li>
+          <li>Groups</li>
+          <li>Groups details</li>
+          <li>Post videos</li>
+          <li>Events details</li>
+          <li>Events details 2</li>
+          <li>Post videos</li>
+          <li>Blog</li>
+          <li>Post details</li><br><hr>
+          <li>App download</li>
+        </ul>
+      </div>
+      
+      <!-- pages div js ends -->
+      
+      
+      <!-- account div js starts  -->
+      <div id="account-box" class="dark-div-2" onmousemove="accountboxOn()">
+        <ul id="demo-list"onmouseout="accountboxOff()">
+          <li>Create a page</li>
+          <li>Settings</li>
+          <li>Notifications</li>
+          <li>Help center</li>
+          <li>Help details</li>
+          <li>Authentication</li>
+          <li>Error 404</li>
+          <li>Offline</li>
+          <li>Privacy & terms</li><br><hr>
+          <li>App download</li>
+        </ul>
+      </div>
+      <!-- account div js ends  -->
+
+ <!-- experiment -->
+     <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="close"></label>
+    <div class="wrapper">
+
+          <div class="box">
+      <form name="search">
+        <input type="search" class="input" placeholder="&nbsp;Click & Search...">
+      </form>
+    </div>
+    <div id="search-line"></div>
+
+            
+      <ul id="responsive-navbar">         
+        <li><a href="#" data-text="Demo" onclick="demoboxOn()" onclick="demoboxOff()">Demo</a></li>         
+        <li><a href="#" data-text="Pages" onclick="pagesboxOn()" onclick="pagesboxOff()">Pages</a></li>         
+        <li><a href="#" data-text="Accounts" onclick="accountboxOn()" onclick="accountboxOff()">Accounts</a></li>    <li><a href="#" data-text="Help">Help</a></li>         
+      <li><a href="#" data-text="&copy;Copyright">Terms/Policy</a></li>     
+    </ul>
+    </div>	</header>
+    <!-- Header part ends here  -->
+
+
+
+
+ <!-- message box section when clicked  -->
+ <div id="invalid-chat-box" class="dark-div"><div id="invalid-chat">
+  You are already in chat box<button onclick="chatInvalid()" class="invalid-chat-btn">Ok</button>
+</div>
+</div>
+
+    <div id="chat-box" class="dark-div">
+      <div id="inbox-contact" class="dark-div-2">
+        <div class="active-chat dark-div-2 dark">Active Chat
+          <button class="chat-six-btn">7</button>
+          <button class="edit-chat"></button>
+        </div>
+          <div class="active-search-box dark-div-2">
+          <input type="search" class="active-search" placeholder="&nbsp;Search for chats">
+          </div>
+
+
+                        <div class="box-follower-only">
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/cristiano.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark">Christiano Ronaldo</span>
+                <span id="person-name-two">Footballer</span>
+              </div>
+            </div>
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/sundar pichai.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark">Sundar Pichai</span>
+                <span id="person-name-two">CEO - Google</span>
+              </div>
+            </div>
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/SRK.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark">Shah Rukh Khan</span>
+                <span id="person-name-two">Bollywood Actor</span>
+              </div>
+            </div>
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/VK.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark">Virat Kohli</span>
+                <span id="person-name-two">Cricketer</span>
+              </div>
+            </div>
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/RA.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark">Ranveer A..</span>
+                <span id="person-name-two">Youtuber</span>
+              </div>
+            </div>
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/RD.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark">Ravi Dubey</span>
+                <span id="person-name-two">Serial Actor</span>
+              </div>
+            </div>
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/AJ.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark">Arijit Singh</span>
+                <span id="person-name-two">Singer</span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="chat-section" class="dark-div-2">
+            <div class="chat-profile-top">
+              <div class="chat-profile-dp"><img src="Images/Celebrities/AJ.jpg" id="persons-dp" alt=""></div>
+              <div id="chat-profile-name">
+                <span id="dp-name-one" class="dark">Arijit Singh</span>
+                <span id="person-name-two">Online</span>
+              </div>
+                <div class="profile-box-right">
+                  <div class="chat-emoji"><img src="Png/call-icon.png" height="100%" width="100%"></div>
+                  <div class="chat-attach"><img src="Png/video-call.png" height="100%" width="100%"></div>
+                  <div class="chat-send"><img src="Png/vertical-menu.png" height="100%" width="100%"></div>
+                </div>
+            </div>
+
+            <!-- middle section of messege-box  -->
+            <div class="chat-profile-middle">
+                <div class="chat-date-start">Jul 16, 2022, 06:15 am</div>
+
+                <!-- messeges starts from here  -->
+                <div class="chat-message-dp"><img src="Images/Celebrities/AJ.jpg" id="persons-dp" alt=""></div>
+                <div id="chat-message-name">
+                  <span id="dp-message-one" class="dark-div dark">Applauded no discovery in newspaper allowance am northward</span>
+                  <span id="dp-message-two">6:15 AM</span>
+                </div>
+                <!-- reply first -->
+                <div class="reply1st">With pleasure</div>
+                <div class="replynext">No visited raising gravity outward subject my cottage Mr be.</div>
+                <span id="reply3rd">6:18 AM  &#10004;</span>
+                <!-- message 2nd -->
+                <div class="chat-message-dp-2"><img src="Images/Celebrities/AJ.jpg" id="persons-dp" alt=""></div>
+                <div id="chat-message-2nd">
+                  <span id="dp-message-one" class="dark-div dark">Please find the attached updated files</span>
+                  <span id="dp-message-two">6:22 AM</span>
+                </div>
+                <div class="chat-message-dp-3"><img src="Images/Celebrities/AJ.jpg" id="persons-dp" alt=""></div>
+                <div id="chat-message-3nd">
+                  <span id="dp-message-one" class="dark-div dark">How promotion excellent curiosity yet attempted happiness Gay prosperous impression</span>
+                  <span id="dp-message-two">6:23 AM</span>
+                </div>
+                <div class="chat-message-dp-4"><img src="Images/Celebrities/AJ.jpg" id="persons-dp" alt=""></div>
+                <div id="chat-message-3nd">
+                  <div id="dp-message-sticker" class="dark-div">Congratulations:) <img src="Png/logo.png" alt="" height="90%" width="90%"></div>
+                  <span id="dp-message-two">6:26 AM</span>
+                </div>
+                <!-- reply second  -->
+                <div class="reply-4th">Ok Thank you </div>
+                <span id="reply-5th">6:30 AM  &#10004;&#10004;</span>
+            </div>
+            <!-- middle section of messege-box ends-->
+
+            <!-- bottom message section    -->
+            <div class="chat-profile-bottom">
+              <input type="text" placeholder="Type a message" id="chatting-input">
+              <div class="chat-option-box">
+                <div class="chat-emoji"><img src="Png/Smile.png" height="100%" width="100%"></div>
+                <div class="chat-attach"><img src="Png/attach.png" height="100%" width="100%"></div>
+                <div class="chat-send"><img src="Png/send2-icon.png" height="100%" width="100%"></div>
+              </div>
+            </div>
+      </div>
+    </div>
+ <!-- message box section when clicked ends -->
+
+
+      <!-- notifications sections when clicked starts  -->
+      <div id="notif-card" class="dark-div-2">
+        <!-- top section of notification  -->
+        <div class="n-card-top">
+          <div class="notif-title dark">Notifications</div><button class="n-btn">4 new</button>
+          <button class="n-btn-clearall" onclick="notifOn()">Clear all</button>
+        </div>
+        <div class="n-card-middle">
+          <!-- bottom section of notification  -->
+        <div class="n-box-1 dark-div"><div class="n-img-1"><img src="Images/Notification-img/shree-ram.jpg" id="persons-dp" alt=""></div>
+          <div class="n-img-detail-1 dark">
+             Shree Ram sent you a friend request.
+            <div class="action-request">
+              <button class="btn-accept-n">Accept</button>
+              <button class="btn-delete-n">Delete</button>
+            </div>
+          </div>
+          <div class="n-img-deatil-time">Just now</div>
+        </div>
+        <div class="n-box-1 dark-div"><div class="n-img-1"><img src="Images/Notification-img/notif-logo-1.jpg" id="persons-dp" alt=""></div>
+        <div class="n-img-detail-1 dark">
+          Websites are building fastest and in the effecient way. Just check out.
+       </div>
+          
+          <div class="n-img-deatil-time">6min</div>
+        </div>
+        <div class="n-box-1 dark-div"><div class="n-img-1"><img src="Images/Notification-img/sinchan.jpg" id="persons-dp" alt=""></div>
+          <div class="n-img-detail-1 dark">
+            Wish that person a happy birthday.(Dec 17)
+            <div class="action-request">
+              <button class="btn-delete-n">Say happy birthday</button>
+            </div>
+          </div>
+          <div class="n-img-deatil-time">3hr</div>
+        </div>
+        <div class="n-box-1 dark-div"><div class="n-img-1"><img src="Images/Notification-img/Ms.D.jpg" id="persons-dp" alt=""></div>
+          <div class="n-img-detail-1 dark">
+            This person likes your story & comments as well.
+
+            <div class="action-request">
+              <button class="btn-accept-n">OK</button>
+            </div>
+          </div>
+          <div class="n-img-deatil-time">17hr</div>
+        </div>
+        <div class="n-box-1 dark-div"><div class="n-img-1"><img src="Images/Celebrities/SRK.jpg" id="persons-dp" alt=""></div>
+          <div class="n-img-detail-1 dark">
+             Shah Rukh Khan sent you a friend request.
+            <div class="action-request">
+              <button class="btn-accept-n">Accept</button>
+              <button class="btn-delete-n">Delete</button>
+            </div>
+          </div>
+          <div class="n-img-deatil-time">1d</div>
+        </div>
+        <div class="n-box-1 dark-div"><div class="n-img-1"><img src="Images/Celebrities/sundar pichai.jpg" id="persons-dp" alt=""></div>
+          <div class="n-img-detail-1 dark">
+             Sundar Pichai sent you a friend request.
+            <div class="action-request">
+              <button class="btn-accept-n">Accept</button>
+              <button class="btn-delete-n">Delete</button>
+            </div>
+          </div>
+          <div class="n-img-deatil-time">3d</div>
+        </div>
+        <div class="n-box-1 dark-div"><div class="n-img-1"><img src="Png/logo.png" id="persons-dp" alt=""></div>
+          <div class="n-img-detail-1 dark">
+             You are a very nice person.
+          </div>
+          <div class="n-img-deatil-time">4d</div>
+        </div>
+        <div class="n-box-1 dark-div"><div class="n-img-1"><img src="Images/Celebrities/RA.jpg" id="persons-dp" alt=""></div>
+          <div class="n-img-detail-1 dark">
+             Ranveer sent you a friend request.
+            <div class="action-request">
+              <button class="btn-accept-n">Accept</button>
+              <button class="btn-delete-n">Delete</button>
+            </div>
+          </div>
+          <div class="n-img-deatil-time">6d</div>
+        </div>
+        <div class="n-box-1 dark-div"><div class="n-img-1"><img src="Images/Notification-img/bootstrap-logo.jpg" id="persons-dp" alt=""></div>
+          <div class="n-img-detail-1 dark">
+            Bootstrap are building websites fastest and effecient way.
+            <div class="action-request">
+              <button class="btn-accept-n">Check out</button>
+
+            </div>
+          </div>
+          <div class="n-img-deatil-time">7d</div>
+        </div>
+        </div>
+
+        <!-- bottom section of notifications  -->
+        <div class="n-card-bottom">
+          <button class="incoming-activity">  Sell all incoming activity</button>
+        </div>
+        <!-- bottom section of notifications ends  -->
+      </div>
+
+
+      <!-- notifications sections when clicked ends  -->
+
+
+
+
+<!-- main section starts from here  -->
+  <main id="main" class="dark-div">
+    <!-- left box section  -->
+          <div class="left-box dark-div-2" id="resp-left-box">
+            <img src="Images/1.jpg" id="img-leftbox" alt="">
+            <div class="box-img-profile"></div>
+            <span class="box-left-title dark dark-div-2">Sahil Jha</span>
+            <span id="box-left-title-text">Web developer at Moon</span>
+            <div id="box-left-title-para">I'd love to change the world,but they won't give me the source code.#&copy;
+            </div>
+            <div id="box-left-paraStatus">
+              <div class="parastatus-one dark"><h3 class="pstatus-text">256</h3>Post</div>
+              <div class="parastatus-one dark"><h3 class="pstatus-text">2.5K</h3>Followers</div>
+              <div class="parastatus-one dark"><h3 class="pstatus-text">365</h3>Following</div>
+            </div>
+            <span id="vertical-line-one">|</span>
+            <span id="vertical-line-two">|</span>
+            <div class="feed-box">
+              <div class="feed-items"><img src="Png/home-icon.png" class="feed-items-images" alt=""><span class="feed-items-text dark"> Feed</span></div>
+              <div class="feed-items"><img src="Png/connections-icon.png" class="feed-items-images" alt=""><span class="feed-items-text dark">Connections</span></div>
+              <div class="feed-items"><img src="Png/latest-news.png" class="feed-items-images" alt=""><span class="feed-items-text dark">Latest News</span></div>
+              <div class="feed-items"><img src="Png/events-icon.png" class="feed-items-images" alt=""><span class="feed-items-text dark">Events</span></div>
+              <div class="feed-items"><img src="Png/groups-icon.png" class="feed-items-images" alt=""><span class="feed-items-text dark">Groups</span></div>
+              <div class="feed-items"><img src="Png/notification-icon.png" class="feed-items-images" alt=""><span class="feed-items-text dark">Notifications</span></div>
+              <div class="feed-items"><img src="Png/settings-icon.png" class="feed-items-images" alt=""><span class="feed-items-text dark">Settings</span></div>
+            </div>
+          </div>
+    <!-- right box section  -->
+      <div class="right-box-up dark-div-2">
+            <span class="right-box-title dark">Who to follow</span>
+             <!-- who to follow starts  -->
+         <div class="box-follower-only">
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/cristiano.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark dark">Christiano Ronaldo</span>
+                <span id="person-name-two">Footballer</span>
+              </div>
+              <div id="persons-invite">+</div>
+            </div>
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/sundar pichai.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark dark">Sundar Pichai</span>
+                <span id="person-name-two">CEO - Google</span>
+              </div>
+              <div id="persons-invite">+</div>
+            </div>
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/SRK.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark dark">Shah Rukh Khan</span>
+                <span id="person-name-two">Bollywood Actor</span>
+              </div>
+              <div id="persons-invite">+</div>
+            </div>
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/VK.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark dark">Virat Kohli</span>
+                <span id="person-name-two">Cricketer</span>
+              </div>
+              <div id="persons-invite">+</div>
+            </div>
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/RA.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark dark">Ranveer A..</span>
+                <span id="person-name-two">Youtuber</span>
+              </div>
+              <div id="persons-invite">+</div>
+            </div>
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/RD.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark dark">Ravi Dubey</span>
+                <span id="person-name-two">Serial Actor</span>
+              </div>
+              <div id="persons-invite">+</div>
+            </div>
+            <div class="box-follower-info">
+              <div id="persons"><img src="Images/Celebrities/AJ.jpg" id="persons-img" alt=""></div>
+              <div id="persons-name-box">
+                <span class="person-name-one dark dark">Arijit Singh</span>
+                <span id="person-name-two">Singer</span>
+              </div>
+              <div id="persons-invite">+</div>
+            </div>
+          </div>
+          <button id="view-more">View more</button>
+        </div>
+
+
+
+
+        <!-- middle box of the main contanier ends  -->
+
+        <!-- right box down  -->
+        <div class="right-box-down dark-div-2">
+          <span class="right-box-title dark">Today's news</span>
+          <div class="box-news-only">
+            <div class="box-info-news">
+              <span class="news-title dark">Ten questions you should answer truthfully</span>
+              <span id="person-name-two">2hr</span>
+            </div>
+            <div class="box-info-news">
+              <span class="news-title dark">Five unbelievalble facts about money</span>
+              <span id="person-name-two">3hr</span>
+            </div>
+            <div class="box-info-news">
+              <span class="news-title dark">Top courses for Web development which is trending now.</span>
+              <span id="person-name-two">6hr</span>
+            </div>
+            <div class="box-info-news">
+              <span class="news-title dark">Skills that you can learn from business</span>
+              <span id="person-name-two">1d</span>
+            </div>
+            <div class="box-info-news">
+              <span class="news-title dark">Best Pinterest Boards for learning about business</span>
+              <span id="person-name-two">2d</span>
+            </div> 
+            <div class="box-info-news">
+              <span class="news-title dark">Technologies are leading the way very well.</span>
+              <span id="person-name-two">4d</span>
+            </div>
+            <div class="box-info-news">
+              <span class="news-title dark">Tips for being a well known freelancer</span>
+              <span id="person-name-two">7d</span>
+            </div>
+          </div>
+        </div>
+
+          <div id="middle-box">
+              <!-- carousel content start from here  -->
+    <div id="carousel-wrap-slide">
+      <div id="carousel" onmousemove="carouselControl()">
+        <div id="content" onmousemove="carouselControl()" onmouseout="carouselControlOFF()">
+          <div class="item dashed-border dark dark-div-2">
+            <img src="Png/plus-icon.png" class="day"  height="50px" width="50px" alt="">
+            <img src="Png/plus-icon-w.png" class="night"  height="50px" width="50px" alt="">
+            <p>Post a story</p>
+          </div>
+          <div class="item"><img src="Images/11.jpg" class="img-carousel-cover"></div>
+          <div class="item"><img src="Images/8.jpg" class="img-carousel-cover"></div>
+          <div class="item"><img src="Images/5.jpg" class="img-carousel-cover"></div>
+          <div class="item"><img src="Images/4.jpg" class="img-carousel-cover"></div>
+          <div class="item"><img src="Images/7.jpg" class="img-carousel-cover"></div>
+          <div class="item"><img src="Images/6.jpg" class="img-carousel-cover"></div>
+          <div class="item"><img src="Images/3.jpg" class="img-carousel-cover"></div>
+          <div class="item"><img src="Images/2.jpg" class="img-carousel-cover"></div>
+          <div class="item"><img src="Images/9.jpg" class="img-carousel-cover"></div>
+          <div class="item"><img src="Images/10.jpg" class="img-carousel-cover"></div>
+          <div class="item"><img src="Images/4.jpg" class="img-carousel-cover"></div>
+        </div>
+      </div>
+      <button id="prev" onmouseover="carouselControl()" onmouseout="carouselControlOFF()"> < </button>
+      <button id="next" onmouseover="carouselControl()" onmouseout="carouselControlOFF()"> > </button>
+    </div>
+              <!-- carousel content start from ends  -->
+
+              <div class="post-contanier dark-div-2">
+                <div class="post-text-search">
+                  <div id="post-img"></div>
+                  <input type="text"
+                   id="post-share-thoughts" placeholder="Share your thoughts...">
+                </div>
+                <div class="post-text-search post-wrap">
+                  <div class="btn-post dark-div dark"><img src="Png/photo-icon.png" class="post-btn-img"> Photo</div>
+                  <div class="btn-post dark-div dark"><img src="Png/video-call.png" class="post-btn-img"> Video</div>
+                  <div class="btn-post dark-div dark"><img src="Png/events-icon.png" class="post-btn-img"> Events</div>
+                  <div class="btn-post dark-div dark"><img src="Png/smile.png" class="post-btn-img"> Feeling/Activity</div>
+                  <div class="btn-dot-menu-post dark-div"><img src="Png/menu-horizontal.png" id="height-width-cover"alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="post-1st dark-div-2">
+                  <div class="post-profile">
+                    <img class="post-profile-image" src="Images/Celebrities/Sundar pichai.jpg"></img>
+                    <div class="post-profile-name-content">
+                      <p><span class="post-profile-name dark">Sundar Pichai ... </span>2hr</p>
+                      <p>CEO... at Google</p>
+                      <div class="btn-dot-menu-post dark-div"><img src="Png/menu-horizontal.png" id="height-width-cover" alt="">
+                  </div>
+                    </div>
+                  </div>
+                    <div class="post-paragraph-1st">
+                      <p>I'm thrilled to share that I've completed a graduate certificate course in project management with the president's honor roll.</p>
+                    </div>
+                    <div class="img-post-1st"></div>
+                        <div class="post-like-comments b-b">
+                          <div class="btn-LC dark"><img src="Png/like-icon.png" id="LC-icon"> Liked (52)</div>
+                          <div class="btn-LC dark"><img src="Png/message-icon2.png" id="LC-icon">Comments (12)</div>
+                          <div class="share-LC dark"><img src="Png/share-icon.png" id="LC-icon">Share(3)</div>
+                         </div>
+
+                          <div class="addcomment">
+                            <div id="post-img"></div>
+                            <input type="text"
+                   id="post-share-thoughts" placeholder="Add a comment...">
+                          </div>
+                          <div class="addcomment-2">
+                            <img src="Images/Celebrities/VK.jpg" id="post-img" alt="">
+                            <div class="comment-part-2 dark-div">
+                                <p><span class="post-profile-name dark">Virat Kohli</span></p>
+                              <p>One of the greatest post i have seen ever and this is the most lovable post hope you all like this comment.</p>
+                            </div>
+                          </div>
+                            <div class="like-view-relpy">
+                              <p>Like (3)</p> <p>Reply</p> <p>View 5 replies</p>
+                            </div>
+
+
+                            <div class="comment-reply-1">
+                            <img src="Images/Celebrities/RA.jpg" id="post-img" alt="">
+                            <div class="comment-part-2 dark-div">
+
+                              <p><span class="post-profile-name dark">Ranveer</span></p>
+                              <p>Yes, i agree and this image shows that Technologies are leading the way and this is a very on going thoughts.</p>    
+                            </div>
+                            </div>
+                              <div class="like-view-relpy">
+                                <p>Like (6)</p> <p>Reply</p>
+                              </div>
+
+                            <div class="comment-reply-1">
+                            <img src="Images/Celebrities/RD.jpg" id="post-img" alt="">
+                            <div class="comment-part-2 dark-div">
+
+                              <p><span class="post-profile-name dark">Ravi Dubey</span></p>
+                              <p>After, a long time i had seen this type of comment and this kind of make me crazy .</p> 
+                            </div>
+                            </div>
+                              <div class="like-view-relpy">
+                                <p>Like</p> <p>Reply (3)</p>
+                              </div>
+
+                            <div class="addcomment-2">
+                            <img src="Images/Celebrities/AJ.jpg" id="post-img" alt="">
+                            <div class="comment-part-2 dark-div">
+                              <p><span class="post-profile-name dark">Arijit Singh</span></p>
+                              <p>The person who are seeing my comment and remains happy till their life and this is a valuable comment from my side.</p>
+                            </div>
+                          </div>
+                            <div class="like-view-relpy">
+                              <p>Like (1)</p> <p>Reply</p> <p>View 9 replies</p>
+                            </div>
+
+                            <div class="view-more-replies dark">
+                              <img src="Png/menu-horizontal.png" id="post-2-fetch" alt=""> Load more comments
+                            </div>
+                  </div>
+                                                    <!-- post no 2nd    -->
+              <div class="post-2nd dark-div-2">
+                                  
+                                      <div class="post-profile b-b pad">
+                    <img class="post-profile-image" src="Images/Notification-img/bootstrap-logo.jpg"></img>
+                    <div class="post-profile-name-content">
+                      <p><span class="post-profile-name dark">Bootstrap: Front-end framework</span></p>
+                      <p>Sponsored</p>
+                      <div class="btn-dot-menu-post dark-div"><img src="Png/menu-horizontal.png" id="height-width-cover" alt="">
+                  </div>
+                    </div>
+                                    </div>
+
+                          <div class="post-paragraph-1st pad m-adjust-post-2">
+                      <p>I'm thrilled to share that I've completed a graduate certificate course in project management with the president's honor roll.</p>
+                    </div>
+                              <div class="img-post-2nd br-100"></div>
+                              <div class="post-2-bottom">
+                              <div class="p-2-one dark">Currently v5.1.3</div>
+                              <div class="p-2-two"><button id="post-2-download">Download now</button></div>
+                              </div>
+              </div>
+
+        <!-- thrid post container starts -->
+        <div class="post-3rd dark-div-2">
+          <div class="post-profile">
+            <img class="post-profile-image" src="Images/Celebrities/SRK.jpg"></img>
+            <div class="post-profile-name-content">
+              <p><span class="post-profile-name dark">Shah Rukh Khan ... </span>1d</p>
+              <p>Bollywood Actor</p>
+              <div class="btn-dot-menu-post dark-div"><img src="Png/menu-horizontal.png" id="height-width-cover" alt="">
+          </div>
+            </div>
+          </div>
+            <div class="post-paragraph-1st">
+              <p> “Look deep into nature, and then you will understand everything better.” Adopt the pace of nature: her secret is patience.” “How glorious a greeting the sun gives the mountains!”.</p>
+            </div>
+            <div class="img-post-3rd"></div>
+
+            <div class="post-2-bottom b-b">
+              <div class="p-4-one dark"><img src="Png/heart-icon.png" id="LC-icon">Louis, Billy and 126 others</div>
+              <div class="p-2-two dark"><img src="Png/message-icon2.png" id="LC-icon">Comments (12)</div>
+              </div>
+            <div class="post-2-bottom b-b">
+              <div class="p-4-one d-f-c dark"><img src="Png/like2-icon.png" id="LC-icon">Liked (56)</div>
+              <div class="p-4-one d-f-c dark"><img src="Png/share2-icon.png" id="LC-icon">Share (3)</div>
+              <div class="p-2-two d-f-c dark"><img src="Png/send2-icon.png" id="LC-icon">Send</div>
+              </div>
+
+                  <div class="addcomment">
+                    <div id="post-img"></div>
+                    <input type="text"
+                         id="post-share-thoughts" placeholder="Add a comment...">
+                  </div>
+                  <div class="addcomment-2">
+                    <img src="Images/Notification-img/Ms.D.jpg" id="post-img" alt="">
+                    <div class="comment-part-2 dark-div">
+                        <p><span class="post-profile-name dark">Ms.Dhoni</span></p>
+                      <p>The person who are seeing my comment and remains happy till their life and this is a valuable comment from my side.</p>
+                    </div>
+                  </div>
+                    <div class="like-view-relpy">
+                      <p>Like (3)</p> <p>Reply</p> <p>View 5 replies</p>
+                    </div>
+
+
+                    <div class="comment-reply-1">
+                    <img src="Images/Celebrities/sundar pichai.jpg" id="post-img" alt="">
+                    <div class="comment-part-2 dark-div">
+
+                      <p><span class="post-profile-name dark">Sundar Pichai</span></p>
+                      <p>One of the greatest post i have seen ever and this is the most lovable post hope you all like this comment.</p>    
+                    </div>
+                    </div>
+                      <div class="like-view-relpy">
+                        <p>Like (6)</p> <p>Reply</p>
+                      </div>
+
+                    <div class="comment-reply-1">
+                    <img src="Images/Celebrities/cristiano.jpg" id="post-img" alt="">
+                    <div class="comment-part-2 dark-div">
+
+                      <p><span class="post-profile-name dark">Christiano Ronaldo</span></p>
+                      <p>After, a long time i had seen this type of comment and this kind of make me crazy .  </p> 
+                    </div>
+                    </div>
+                      <div class="like-view-relpy">
+                        <p>Like</p> <p>Reply</p>
+                      </div>
+
+                    <div class="addcomment-2">
+                    <img src="Images/Notification-img/Ms.D.jpg" id="post-img" alt="">
+                    <div class="comment-part-2 dark-div">
+                      <p><span class="post-profile-name dark">Ms.Dhoni</span></p>
+                      <p>Removed demands expense account in outward tedious do. Particular way thoroughly unaffected projection.</p>
+                      <img src="Images/4.jpg" id="post-3-comment" alt="">
+                    </div>
+                  </div>
+                    <div class="like-view-relpy">
+                      <p>Like (1)</p> <p>Reply</p> <p>View 9 replies</p>
+                    </div>
+
+                    <div class="view-more-replies dark">
+                      <img src="Png/menu-horizontal.png" id="post-2-fetch" alt=""> Load more comments
+                    </div>
+          </div>
+                                                <!-- thrid post container ends -->
+                                                <!-- fourth post starts  -->
+                            <div class="post-4th dark-div-2">
+
+                              
+                              <div class="post-profile pad">
+                                <img class="post-profile-image day" src="Png/i-con.png"></img>
+                                <img class="post-profile-image night" src="Png/i-con-w.png"></img>
+                                <div class="post-profile-name-content">
+                                  <p><span class="post-profile-name dark">Apple Education</span></p>
+                                  <p>9 November at 23:29</p>
+                                  <div class="btn-dot-menu-post dark-div"><img src="Png/menu-horizontal.png" id="height-width-cover" alt="">
+                              </div>
+                                </div>
+                              </div>
+            
+                                      <div class="post-paragraph-1st pad m-adjust-post-2">
+                                  <p>Find out how you can save time in the classroom this year. Earn recognition while you learn new skills on iPad and Mac. Start recognition your first Apple Teacher badge today!</p>
+                                </div>
+
+                                <div class="post-2-bottom b-b">
+                                  <div class="p-4-one dark"><img src="Png/heart-icon.png" id="LC-icon">Louis, Billy and 126 others</div>
+                                  <div class="p-2-two dark"><img src="Png/message-icon2.png" id="LC-icon">Comments (12)</div>
+                                  </div>
+                                <div class="post-2-bottom">
+                                  <div class="p-4-one d-f-c dark"><img src="Png/like2-icon.png" id="LC-icon">Liked (56)</div>
+                                  <div class="p-4-one d-f-c dark"><img src="Png/share2-icon.png" id="LC-icon">Share (3)</div>
+                                  <div class="p-2-two d-f-c dark"><img src="Png/send2-icon.png" id="LC-icon">Send</div>
+                                  </div>
+
+
+
+                              </div>
+                                                <!-- fourth post starts  -->
+<div class="post-6th dark-div-2">
+                
+
+                              <div class="post-profile pad">
+                                <img class="post-profile-image" src="Images/Celebrities/cristiano.jpg"></img>
+                                <div class="post-profile-name-content">
+                                  <p><span class="post-profile-name dark">Christiano Ronaldo</span></p>
+                                  <p>15 December at 17:23</p>
+                                  <div class="btn-dot-menu-post dark-div"><img src="Png/menu-horizontal.png" id="height-width-cover" alt="">
+                              </div>
+                                </div>
+                              </div>
+            
+                                      <div class="post-paragraph-1st pad m-adjust-post-2">
+                                  <p>How do you protect your business against cyber-crime?</p>
+                                </div>
+                                <div class="vote-btn-box">
+                                 <button class="vote-btn">Our dedicated staff will protect us</button>
+                                  <button class="vote-btn">Our dedicated staff will protect us</button>
+                                  <button class="vote-btn">Our dedicated staff will protect us</button>
+                                  <button class="vote-btn">Our dedicated staff will protect us</button>
+                                </div>
+                                <div class="post-2-bottom b-b">
+                                  <div class="p-4-one dark"><img src="Png/heart-icon.png" id="LC-icon">Louis, Billy and 126 others</div>
+                                  <div class="p-2-two dark"><img src="Png/message-icon2.png" id="LC-icon">Comments (12)</div>
+                                  </div>
+                                <div class="post-2-bottom">
+                                  <div class="p-4-one d-f-c dark"><img src="Png/like2-icon.png" id="LC-icon">Liked (56)</div>
+                                  <div class="p-4-one d-f-c dark"><img src="Png/share2-icon.png" id="LC-icon">Share (3)</div>
+                                  <div class="p-2-two d-f-c dark"><img src="Png/send2-icon.png" id="LC-icon">Send</div>
+                                  </div>
+              </div>
+                <div class="post-8th dark-div-2">
+                  
+
+
+                                      <div class="post-profile b-b pad">
+                    <img class="post-profile-image" src="Images/cat-img.jpg"></img>
+                    <div class="post-profile-name-content">
+                      <p><span class="post-profile-name dark">Flipcat : It's your mart</span></p>
+                      <p>Sponsored</p>
+                      <div class="btn-dot-menu-post dark-div"><img src="Png/menu-horizontal.png" id="height-width-cover" alt="">
+                  </div>
+                    </div>
+                                    </div>
+
+                                       <div class="post-paragraph-1st pad m-adjust-post-2">
+                                  <p>The next-generation blog, news, and magazine theme for you to start sharing your content today with beautiful aesthetics! This minimal & clean Bootstrap 5 based theme is ideal for all types of sites that aim to provide users with content.<a href="" id="vid-link"> #bootstrap #webestica #getbootstrap #bootstrap5</a></p>
+                                </div>
+                                <div class="img-post-2nd br-100"></div>
+
+                                <div id="blogzine">
+                                  <a href="https://www.flipkart.com" target="_blank" id="vid-link">https://www.flipkart.com</a>
+                                  <h4 class="dark">Blogzine-Blog and Magazine Bootstrap 5 Themes</h4>
+                                  <p>Bootstrap based News, Magazine and Blog Themes</p>
+                                </div>
+
+                                <div class="post-2-bottom">
+                                  <div class="p-4-one d-f-c dark"><img src="Png/like2-icon.png" id="LC-icon">Liked (56)</div>
+                                  <div class="p-4-one d-f-c dark"><img src="Png/share2-icon.png" id="LC-icon">Share (3)</div>
+                                  <div class="p-2-two d-f-c dark"><img src="Png/send2-icon.png" id="LC-icon">Send</div>
+                                  </div>
+
+                </div>
+              <div class="post-7th dark-div-2">
+                
+
+                              <div class="post-profile">
+                                <img class="post-profile-image" src="Images/Celebrities/cristiano.jpg"></img>
+                                <div class="post-profile-name-content">
+                                  <p><span class="post-profile-name dark">Christiano Ronaldo</span></p>
+                                  <p>15 December at 17:23</p>
+                                  <div class="btn-dot-menu-post dark-div"><img src="Png/menu-horizontal.png" id="height-width-cover" alt="">
+                              </div>
+                                </div>
+                              </div>
+            
+                                      <div class="post-paragraph-1st m-adjust-post-2">
+                                  <p>How do you protect your business against cyber-crime?</p>
+                                </div>
+                                <div class="vote-btn-box vote-post7">
+                                 <button class="vote-btn">Our dedicated staff will protect us</button>
+                                  <button class="vote-btn">Our dedicated staff will protect us</button>
+                                  <button class="vote-btn">Our dedicated staff will protect us</button>
+                                  <button class="vote-btn">Our dedicated staff will protect us</button>
+                                </div>
+                                <div class="post-2-bottom b-b">
+                                  <div class="p-4-one dark"><img src="Png/heart-icon.png" id="LC-icon">Louis, Billy and 126 others</div>
+                                  <div class="p-2-two dark"><img src="Png/message-icon2.png" id="LC-icon">Comments (12)</div>
+                                  </div>
+                                <div class="post-2-bottom">
+                                  <div class="p-4-one d-f-c dark"><img src="Png/like2-icon.png" id="LC-icon">Liked (56)</div>
+                                  <div class="p-4-one d-f-c dark"><img src="Png/share2-icon.png" id="LC-icon">Share (3)</div>
+                                  <div class="p-2-two d-f-c dark"><img src="Png/send2-icon.png" id="LC-icon">Send</div>
+                                  </div>
+
+
+              </div>
+            
+              <div class="post-9th dark-div-2">
+                <div class="post-profile">
+                  <img class="post-profile-image" src="Images/Notification-img/shree-ram.jpg"></img>
+                  <div class="post-profile-name-content">
+                    <p><span class="post-profile-name dark">Jai Shree Ram ...</span> &copy;</p>
+                    <p>The embodiment of chivalry and virtue.</p>
+                    <div class="btn-dot-menu-post dark-div"><img src="Png/menu-horizontal.png" id="height-width-cover" alt="">
+                </div>
+                  </div>
+                </div>
+                  <div class="post-paragraph-1st">
+                    <p>A great video to see the <a id="vid-link" href="#">beauty</a> of nature.Let's enjoy the view.<a href="#" id="vid-link">#Nature #Water #Beautiful</a> </p>
+                  </div>
+                  <div class="img-post-5th">
+                    <video src="Videos/video.mp4" id="first-video" controls loop poster="Videos/poster-video.png"></video>
+                  </div>
+                      <div class="post-like-comments">
+                        <div class="btn-LC dark"><img src="Png/like-icon.png" id="LC-icon"> Liked (52)</div>
+                        <div class="btn-LC dark"><img src="Png/message-icon2.png" id="LC-icon">Comments (12)</div>
+                        <div class="share-LC dark"><img src="Png/share-icon.png" id="LC-icon">Share(3)</div>
+                       </div>
+      
+                        <div class="addcomment">
+                          <div id="post-img"></div>
+                          <input type="text"
+                 id="post-share-thoughts" placeholder="Add a comment...">
+                        </div>
+                        <div class="addcomment-2">
+                          <img src="Images/Celebrities/cristiano.jpg" id="post-img" alt="">
+                          <div class="comment-part-2 dark-div">
+                              <p><span class="post-profile-name dark">Christiano Ronaldo</span></p>
+                            <p>After, a long time i had seen this type of comment and this kind of make me crazy .</p>
+                          </div>
+                        </div>
+                          <div class="like-view-relpy">
+                            <p>Like (3)</p> <p>Reply</p> <p>View 5 replies</p>
+                          </div>
+      
+      
+                          <div class="comment-reply-1">
+                          <img src="Images/Notification-img/sinchan.jpg" id="post-img" alt="">
+                          <div class="comment-part-2 dark-div">
+      
+                            <p><span class="post-profile-name dark">Sinchan Nohara</span></p>
+                            <p>Yes, i agree and this image shows that Technologies are leading the way and this is a very on going thoughts.</p>    
+                          </div>
+                          </div>
+                            <div class="like-view-relpy">
+                              <p>Like (6)</p> <p>Reply</p>
+                            </div>
+     
+                          <div class="view-more-replies dark">
+                            <img src="Png/menu-horizontal.png" id="post-2-fetch" alt=""> Load more comments
+                          </div>
+
+
+
+              </div>
+
+              <button class="post-loadmore" id="page-last">Load more</button>
+
+        <!-- middle box of the main contanier ends  -->
+  </main>
+
+<button id="rspnsv-btn" onclick="respleftBoxON()"><img src="Png/responsive-profile-menu.png" class="profile-menu"></button>
+<!-- main section ends  here  -->
+
+
+
+
+
+
+
+
+
+
+<script src="min.js"></script>
+</body>
+</html>
