@@ -49,8 +49,9 @@
 
 
       <!-- Demo div js starts -->
-      	<div id="demo-box" class="dark-div-2"onmousemove="demoboxOn()">
-          <ul id="demo-list"onmouseout="demoboxOff()">
+      <div id="demo-box" class="dark-div-2"onmousemove="demoboxOn()">
+        <ul id="demo-list"onmouseout="demoboxOff()">
+          <button class="n-btn-clearall" onclick="allBoxoff()">&times;</button>
             <a href="#"><li>Home default</li></a>
            <a href="#post-2-fetch"><li>Bootstrap Post</li></a>
             <li>Home social</li>
@@ -67,6 +68,7 @@
       <!-- pages div js starts -->
       <div id="pages-box" class="dark-div-2" onmousemove="pagesboxOn()">
         <ul id="demo-list"onmouseout="pagesboxOff()">
+          <button class="n-btn-clearall" onclick="allBoxoff()">&times;</button>
           <li>Albums</li>
           <li>Celebrations</li>
           <li>Messaging</li>
@@ -89,6 +91,7 @@
       <!-- account div js starts  -->
       <div id="account-box" class="dark-div-2" onmousemove="accountboxOn()">
         <ul id="demo-list"onmouseout="accountboxOff()">
+          <button class="n-btn-clearall" onclick="allBoxoff()">&times;</button>
           <li>Create a page</li>
           <li>Settings</li>
           <li>Notifications</li>
@@ -105,7 +108,7 @@
 
  <!-- experiment -->
      <input type="checkbox" id="active">
-    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="menu-btn"onclick="allBoxoff()" ><span></span></label>
     <label for="active" class="close"></label>
     <div class="wrapper">
 
@@ -118,10 +121,11 @@
 
             
       <ul id="responsive-navbar">         
-        <li><a href="#" data-text="Demo" onclick="demoboxOn()" onclick="demoboxOff()">Demo</a></li>         
-        <li><a href="#" data-text="Pages" onclick="pagesboxOn()" onclick="pagesboxOff()">Pages</a></li>         
-        <li><a href="#" data-text="Accounts" onclick="accountboxOn()" onclick="accountboxOff()">Accounts</a></li>    <li><a href="#" data-text="Help">Help</a></li>         
-      <li><a href="#" data-text="&copy;Copyright">Terms/Policy</a></li>     
+        <li><a href="#" data-text="Demo"  onmouseover="demoboxOn()" onmouseout="demoboxOff()" >Demo</a></li>         
+        <li><a href="#" data-text="Pages" onclick="pagesboxOn()">Pages</a></li>         
+        <li><a href="#" data-text="Accounts" onclick="accountboxOn()">Accounts</a></li>
+        <li><a href="#" data-text="Help" onclick="allBoxoff()">Help</a></li>         
+      <li><a href="#" data-text="&copy;Copyright" onclick="allBoxoff()">Terms/Policy</a></li>     
     </ul>
     </div>	</header>
     <!-- Header part ends here  -->
@@ -267,7 +271,7 @@
         <!-- top section of notification  -->
         <div class="n-card-top">
           <div class="notif-title dark">Notifications</div><button class="n-btn">4 new</button>
-          <button class="n-btn-clearall" onclick="notifOn()">Clear all</button>
+          <button class="n-btn-clearall" onclick="notifOn()">&times;</button>
         </div>
         <div class="n-card-middle">
           <!-- bottom section of notification  -->
@@ -372,6 +376,7 @@
   <main id="main" class="dark-div">
     <!-- left box section  -->
           <div class="left-box dark-div-2" id="resp-left-box">
+            <button class="n-btn-clearall l-b-e" onclick="respleftBoxON()">&times;</button>
             <img src="Images/1.jpg" id="img-leftbox" alt="">
             <div class="box-img-profile"></div>
             <span class="box-left-title dark dark-div-2">Sahil Jha</span>

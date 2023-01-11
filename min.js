@@ -9,6 +9,8 @@ function demoboxOff() {
 	document.getElementById("demo-box").style.display='none';
 	document.getElementById("demo").style.color="#666363";
 	}
+
+
 // demobox javascript ends 
 
 // pagebox javascript 
@@ -37,6 +39,11 @@ function accountboxOff() {
 	}
 // accountbox javascript ends
 
+	function allBoxoff(){
+		demoboxOff();
+		pagesboxOff();
+		accountboxOff();
+	}
  		function mainSection(){
  			location.reload()
  		}
@@ -65,13 +72,19 @@ function accountboxOff() {
 
 	function notifOn(){
 		let notON=document.getElementById("notif-card");
-		if(notON.style.display=='flex'){
-			notON.style.display='none';
+		if (notON.style.right==''){
+			notON.style.right='0%';
 		}
 		else{
-			notON.style.display='flex';
+			notON.style.right='';
 		}
+
 	}
+
+
+
+
+
 // notification box section js starts  
 // carousel section javascript starts 
   	const gap =0;
@@ -159,12 +172,14 @@ function carouselControlOFF (){
 
 				function respleftBoxON(){
 					let lefresp = document.getElementById("resp-left-box")
-					if(lefresp.style.display=='block'){
-						lefresp.style.display=''
-					}
-					else{lefresp.style.display="block"}
-				}
+					if (lefresp.style.left==''){
+						lefresp.style.left='0%';
+						}
 
+					else{
+							lefresp.style.left='';
+						}
+				}
 
 
 
